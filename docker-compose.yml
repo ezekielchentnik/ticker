@@ -1,0 +1,16 @@
+version: '3.4'
+services:
+    telemetry:
+        build: ./telemetry
+        image: telemetry
+        volumes:
+            - './telemetry:/usr/src'
+        ports:
+            - '3000:3000' # HOST:CONTAINER
+    ui:
+        build: ./ui
+        image: ui
+        ports:
+         - '8081:8081' # HOST:CONTAINER
+        depends_on:
+            - telemetry

@@ -1,0 +1,21 @@
+{
+  "name": "ticker",
+  "version": "0.0.0",
+  "description": "Trackin' tickers.",
+  "private": true,
+  "scripts": {
+    "start": "http-server public -c0 -g -b -o & onchange '**/*' -i -e 'public' -- npm run build",
+    "build": "rm -rf public && cp -r static public && esbuild entry.js --bundle --outdir=public --sourcemap --jsx-factory=h --format=iife --minify && bread-compressor public",
+    "serve": "http-server public -c3600 -g -b",
+    "profile": "lighthouse https://nifty-dubinsky-fd4031.netlify.app/ --view"
+  },
+  "devDependencies": {
+    "bread-compressor-cli": "1.1.0",
+    "esbuild": "0.4.13",
+    "http-server": "0.12.3",
+    "lighthouse": "^6.0.0",
+    "onchange": "7.0.2",
+    "preact": "10.4.4",
+    "surge": "0.21.3"
+  }
+}

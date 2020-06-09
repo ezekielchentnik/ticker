@@ -1,0 +1,15 @@
+{
+  "name": "telemetry",
+  "version": "0.0.0",
+  "description": "Track stuff.",
+  "private": true,
+  "scripts": {
+    "prestart": "node setup.js",
+    "start": "micro",
+    "reset": "rm .data/main.db && node setup.js"
+  },
+  "dependencies": {
+    "micro": "9.3.4",
+    "sqlite3": "4.2.0"
+  }
+}
