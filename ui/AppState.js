@@ -6,7 +6,7 @@ import { useState, useEffect } from "preact/hooks";
 
 // todo: inject token at build time
 const API_TOKEN = 'pk_5b49c1fa228e490f8bf42a72aea3890d';
-const REFRESH_RATE = 100; // seconds
+const REFRESH_RATE = 3; // seconds
 
 // initial set of portfolios
 const portfolios = {

@@ -2,18 +2,16 @@
 import { h } from "preact";
 
 import { formatChange, formatChangePercent, formatMarketCap, formatQuote, calculateStyles, isNull } from "./helpers.js";
-
-const LineChart = () => (<div>hi</div>);
+import { Chart } from "./Chart.jsx";
 
 const Details = ({ symbol, quote }) => {
-    // todo: enhance line chart
     return (
         <div id={`${symbol}`} class="modal-window">
             <div>
                 <a href="#" title="Close" class="modal-close">Close</a>
                 <h1>{symbol}</h1>
-                <div class="modal-details">{isNull(quote) ? "fetching ..." : JSON.stringify(quote, null, 2)}</div>
-                {quote && <div class="modal-details"><LineChart quote={quote} /></div>}
+                <div class="modal-details" style={{ fontSize: "12px" }}>{isNull(quote) ? "fetching ..." : JSON.stringify(quote, null, 2)}</div>
+                <div class="modal-chart"><Chart /></div>
                 <div><small>Check out</small></div>
                 <a href={`https://iextrading.com/apps/stocks/${symbol}`} target="_blank">👉 {symbol} on IEX</a>
             </div>

@@ -8,6 +8,10 @@ import { AppState } from "./AppState.js";
 // note: keeping things simple, there are other ways to track, e.g. sendBeacon & beforeunload, img pixels, etc.
 // note: check and see if we tracked event and stored in db using: curl http://localhost:3000
 const track = event_type => {
+    // until the telemetry api is deployed, just punt
+    if(location.hostname.includes("netlify")){
+        return;
+    }
     return fetch(
         'http://localhost:3000',
         {
