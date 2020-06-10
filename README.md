@@ -1,6 +1,6 @@
 # ticker
 
-Note: if the live version does not display data, it is likely due to rate limits w/IEX Cloud, running locally should do the trick!
+Note: if the live version does not display data, it is likely due to rate limits w/IEX Cloud, running locally should do the trick! You can also bring your own API token https://happy-burro.netlify.app?token=[IEX_Cloud_Token]
 
 Live version: [https://happy-burro.netlify.app](https://happy-burro.netlify.app)
 
