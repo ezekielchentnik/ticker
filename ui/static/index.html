@@ -21,31 +21,29 @@
       * {
         box-sizing: border-box;
       }
-
       body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
           "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
         margin: 0;
         padding: 0;
       }
-
       .wrapper {
         max-width: 1024px;
         margin: 0 auto;
       }
-
       .wrapper > * {
         padding: 20px;
       }
-
       .head {
         grid-area: header;
+        font-family: Courier, monospace;
       }
       .content {
         grid-area: content;
       }
       .footer {
         grid-area: footer;
+        font-family: Courier, monospace;
       }
       .wrapper {
         display: grid;
@@ -55,7 +53,6 @@
           "content"
           "footer";
       }
-
       table {
         font-family: Courier, monospace;
         border-collapse: collapse;
@@ -63,12 +60,10 @@
         font-size: 1.1em;
         margin-bottom: 1em;
       }
-
       .stock-symbol {
         width: 16%;
         padding: 2px 4px 2px 0px;
       }
-
       .stock-price,
       .stock-change,
       .stock-change-pct,
@@ -77,19 +72,15 @@
         text-align: right;
         padding: 2px 4px;
       }
-
       .stock-mkt-cap {
         display: none;
       }
-
       summary:hover {
         cursor: pointer;
       }
-
       summary::-webkit-details-marker {
         display: none;
       }
-
       .modal-window {
         position: fixed;
         background-color: #ffffff;
@@ -104,27 +95,22 @@
         -webkit-transition: all 0.3s;
         transition: all 0.3s;
       }
-
       .modal-window:target {
         visibility: visible;
         opacity: 1;
         pointer-events: auto;
       }
-
       .modal-window > div {
         margin: 2em;
         background: #ffffff;
       }
-
       .modal-window header {
         font-weight: bold;
       }
-
       .modal-window h1 {
         font-size: 150%;
         margin: 0 0 15px;
       }
-
       .modal-close {
         color: #aaa;
         line-height: 50px;
@@ -136,17 +122,25 @@
         width: 70px;
         text-decoration: none;
       }
-
       .modal-close:hover {
         color: black;
       }
-
       .modal-details {
         max-height: 200px;
         overflow: scroll;
         margin: 1em 0;
       }
-
+      input {
+        padding: 0.8em;
+        width: 200px;
+        margin: 0 0.5em 0 0;
+      }
+      button {
+        padding: 0.8em;
+        background: #888;
+        border: 1px solid #888;
+		color: white;
+      }
       @media (min-width: 700px) {
         .wrapper {
           grid-template-columns: 1fr 6fr 1fr;
@@ -159,14 +153,12 @@
         .stock-symbol {
           width: 12%;
         }
-
         .stock-price,
         .stock-change,
         .stock-change-pct,
         .stock-mkt-cap {
           width: 22%;
         }
-
         .stock-mkt-cap {
           display: table-cell;
         }

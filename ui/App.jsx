@@ -78,7 +78,7 @@ const Portfolio = ({ portfolio, quotes, details, addTicker, fetchDetails }) => (
             const { value } = e.target.children[0];
             addTicker(portfolio.id, value);
         }}>
-            <input type="text" placeholder="Enter symbol e.g. GOOGL" />
+            <input type="text" placeholder="Enter symbol e.g. GOOGL" required />
             <button>Add</button>
         </form>
     </details>
