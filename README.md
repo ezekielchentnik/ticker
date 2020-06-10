@@ -1,5 +1,7 @@
 # ticker
 
+Note: if the live version does not display data, it is likely due to rate limits w/IEX Cloud, running locally should do the trick!
+
 Live version: [https://nifty-dubinsky-fd4031.netlify.app](https://nifty-dubinsky-fd4031.netlify.app)
 
 ## Install As Desktop Application
