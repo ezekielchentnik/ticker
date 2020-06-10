@@ -3,8 +3,8 @@
 // in turn trigger the install event again.
 
 // todo: use env / replace to define versions from package.json
-const PRECACHE = 'precache-v0.0.7';
-const RUNTIME = 'runtime-v0.0.7';
+const PRECACHE = 'precache-v0.0.8';
+const RUNTIME = 'runtime-v0.0.8';
 
 // A list of local resources we always want to be cached.
 const PRECACHE_URLS = [

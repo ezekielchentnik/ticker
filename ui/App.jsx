@@ -34,7 +34,7 @@ const Details = ({ symbol, quote }) => {
         </div>
         <div class="modal-chart">
           {isNull(quote) ? (
-            "fetching ..."
+            ""
           ) : (
             <Chart data={formatChart(quote.chart)} />
           )}
