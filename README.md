@@ -2,17 +2,17 @@
 
 Note: if the live version does not display data, it is likely due to rate limits w/IEX Cloud, running locally should do the trick!
 
-Live version: [happy-burro.netlify.app](happy-burro.netlify.app)
+Live version: [https://happy-burro.netlify.app](https://happy-burro.netlify.app)
 
 ## Install As Desktop Application
 
 To install as an application via Google Chrome Browser follow below steps:
 
-1. Open [happy-burro.netlify.app](happy-burro.netlify.app) in Chrome 70+
+1. Open [https://happy-burro.netlify.app](https://happy-burro.netlify.app) in Chrome 70+
 2. Go to Settings (option on top right corner next to address bar)
 3. Choose “Install Ticker …” option and done!
 
-These steps will install [happy-burro.netlify.app](happy-burro.netlify.app) as a desktop application and create a desktop shortcut.
+These steps will install [https://happy-burro.netlify.app](https://happy-burro.netlify.app) as a desktop application and create a desktop shortcut.
 
 ## Running Locally
 
