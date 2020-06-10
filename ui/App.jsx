@@ -14,7 +14,7 @@ import { Chart } from "./Chart.jsx";
 const formatChart = (data) => {
   return data.map((day, i) => {
     return {
-      label: day.label,
+      label: '', // todo: make useful
       x: i,
       y: day.close,
     };

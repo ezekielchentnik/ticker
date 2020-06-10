@@ -190,15 +190,15 @@ export const Chart = ({ data }) => {
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "max-content 400px",
+        gridTemplateColumns: "max-content auto",
         alignItems: "center",
       }}
     >
       <AxisLabel text="$" rotate />
-      <div style={{ maxWidth: 700, alignSelf: "flex-start" }}>
+      <div style={{ alignSelf: "flex-start" }}>
         <LineChart
-          width={500}
-          height={300}
+          width={700}
+          height={250}
           data={data}
           horizontalGuides={5}
           precision={2}
@@ -206,7 +206,7 @@ export const Chart = ({ data }) => {
         />
       </div>
       <div />
-      <AxisLabel text="5d" />
+      <AxisLabel text="1y" />
     </div>
   );
 };
