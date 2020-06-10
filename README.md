@@ -101,7 +101,6 @@ To deploy the UI to netlify, simply land a PR, netlify will do the rest.
 - [x] progressive loading w/ skeleton placeholders
 - [x] virtualized lists and data tables
 - [x] preact for small bootstrap
-- [x] deployed via surge "npm run deploy"
 - [x] pre-commit hooks for linting and testing
 - [x] responsive, looks good on mobile
 - [x] progressive web app (PWA), network resilient, fallback experience when offline
