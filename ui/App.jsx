@@ -11,6 +11,16 @@ import {
 } from "./helpers.js";
 import { Chart } from "./Chart.jsx";
 
+const formatChart = (data) => {
+  return data.map((day, i) => {
+    return {
+      label: day.label,
+      x: i,
+      y: day.close,
+    };
+  });
+};
+
 const Details = ({ symbol, quote }) => {
   return (
     <div id={`${symbol}`} class="modal-window">
@@ -20,13 +30,14 @@ const Details = ({ symbol, quote }) => {
         </a>
         <h1>{symbol}</h1>
         <div class="modal-details" style={{ fontSize: "12px" }}>
-          {isNull(quote) ? "fetching ..." :  <Summary data={quote.quote} />}
-
- 
-
+          {isNull(quote) ? "fetching ..." : <Summary data={quote.quote} />}
         </div>
         <div class="modal-chart">
-          <Chart />
+          {isNull(quote) ? (
+            "fetching ..."
+          ) : (
+            <Chart data={formatChart(quote.chart)} />
+          )}
         </div>
         <div>
           <small>Check out</small>

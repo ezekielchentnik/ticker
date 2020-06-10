@@ -47,7 +47,7 @@ export const AppState = ({ children }) => {
     };
 
     const fetchDetails = symbol => {
-        const url = `${BASE_URL}?types=quote,chart&symbols=${symbol}&token=${API_TOKEN}`;
+        const url = `${BASE_URL}?types=quote,chart&symbols=${symbol}&token=${API_TOKEN}&chartByDay=true&range=5d`;
         const updatedAt = (new Date()).toLocaleString(); // todo: get actual updatedAt from API
         fetch(url)
             .then(res => res.json())

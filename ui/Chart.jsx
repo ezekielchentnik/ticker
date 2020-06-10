@@ -3,37 +3,39 @@ import { h, Fragment } from "preact";
 const STROKE = 1;
 
 const labelStyle = {
-    display: "inline-block",
-    width: '100%',
-    textAlign: 'center',
-    color: "#808080"
+  display: "inline-block",
+  width: "100%",
+  textAlign: "center",
+  color: "#808080",
 };
-  
+
 const rotateStyles = {
-    transform: "rotate(-90deg)",
-    width: 35,
-    transformOrigin: "center",
-    marginTop: 50,
-    marginRight: 20
+  transform: "rotate(-90deg)",
+  width: 35,
+  transformOrigin: "center",
+  marginTop: 50,
+  marginRight: 20,
 };
-  
+
 export const AxisLabel = ({ text, rotate }) => (
-    <div>
-        <span style={{...labelStyle, ...(rotate ? rotateStyles : {})}}>{text}</span>
-    </div>
+  <div>
+    <span style={{ ...labelStyle, ...(rotate ? rotateStyles : {}) }}>
+      {text}
+    </span>
+  </div>
 );
-  
+
 export const LineChart = ({
   data,
-  height=200,
-  width= 500,
-  numberOfHorizontalGuides= 4,
-  numberOfVerticalGuides= null,
-  precision= 2
+  height = 200,
+  width = 500,
+  numberOfHorizontalGuides = 4,
+  numberOfVerticalGuides = null,
+  precision = 2,
 }) => {
   const FONT_SIZE = width / 50;
-  const maximumXFromData = Math.max(...data.map(e => e.x));
-  const maximumYFromData = Math.max(...data.map(e => e.y));
+  const maximumXFromData = Math.max(...data.map((e) => e.x));
+  const maximumYFromData = Math.max(...data.map((e) => e.y));
 
   const digits =
     parseFloat(maximumYFromData.toString()).toFixed(precision).length + 1;
@@ -43,7 +45,7 @@ export const LineChart = ({
   const chartHeight = height - padding * 2;
 
   const points = data
-    .map(element => {
+    .map((element) => {
       const x = (element.x / maximumXFromData) * chartWidth + padding;
       const y =
         chartHeight - (element.y / maximumYFromData) * chartHeight + padding;
@@ -57,8 +59,9 @@ export const LineChart = ({
 
   const XAxis = () => (
     <Axis
-      points={`${padding},${height - padding} ${width - padding},${height -
-        padding}`}
+      points={`${padding},${height - padding} ${width - padding},${
+        height - padding
+      }`}
     />
   );
 
@@ -126,7 +129,7 @@ export const LineChart = ({
           style={{
             fill: "#808080",
             fontSize: FONT_SIZE,
-            fontFamily: "Helvetica"
+            fontFamily: "Helvetica",
           }}
         >
           {element.label}
@@ -151,7 +154,7 @@ export const LineChart = ({
           style={{
             fill: "#808080",
             fontSize: FONT_SIZE,
-            fontFamily: "Helvetica"
+            fontFamily: "Helvetica",
           }}
         >
           {parseFloat(maximumYFromData * (index / PARTS)).toFixed(precision)}
@@ -182,32 +185,28 @@ export const LineChart = ({
   );
 };
 
-export const Chart = () => {
-    return (
-      <div style={{
-        display: 'grid', gridTemplateColumns: 'max-content 400px', alignItems: 'center'
-      }}>
-        <AxisLabel text="$" rotate/>
-        <div style={{ maxWidth: 700, alignSelf: 'flex-start' }}>
-          <LineChart
-            width={500}
-            height={300}
-            data={[
-              { label: "S", x: 0, y: 0 },
-              { label: "M", x: 1, y: 400 },
-              { label: "T", x: 2, y: 300 },
-              { label: "W", x: 3, y: 100 },
-              { label: "TH", x: 4, y: 400 },
-              { label: "F", x: 5, y: 500 },
-              { label: "S", x: 6, y: 400 }
-            ]}
-            horizontalGuides={5}
-            precision={2}
-            verticalGuides={1}
-          />
-        </div>
-        <div/>
-        <AxisLabel text="7d"/>
+export const Chart = ({ data }) => {
+  return (
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "max-content 400px",
+        alignItems: "center",
+      }}
+    >
+      <AxisLabel text="$" rotate />
+      <div style={{ maxWidth: 700, alignSelf: "flex-start" }}>
+        <LineChart
+          width={500}
+          height={300}
+          data={data}
+          horizontalGuides={5}
+          precision={2}
+          verticalGuides={1}
+        />
       </div>
-    );
-  };
+      <div />
+      <AxisLabel text="5d" />
+    </div>
+  );
+};
