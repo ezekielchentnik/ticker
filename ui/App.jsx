@@ -86,18 +86,22 @@ const Portfolio = ({ portfolio, quotes, details, addTicker, fetchDetails }) => (
 
 export const App = ({ state: { portfolios, refreshRate, quotes, details, updatedAt }, addTicker, fetchDetails }) => {
     return (     
-        <div class="stocks-container">
-            <p>Updated at: {updatedAt} - updates every {refreshRate} seconds</p>
-            {Object.values(portfolios)
-                .map(portfolio => (
-                    <Portfolio
-                        portfolio={portfolio}
-                        quotes={quotes}
-                        details={details}
-                        addTicker={addTicker}
-                        fetchDetails={fetchDetails}
-                    />
-                ))}
+        <div class="wrapper">
+                <header class="head">Ticker</header>
+                <div class="content">
+                    <div>Updated at: {updatedAt} - updates every {refreshRate} seconds</div>
+                    {Object.values(portfolios)
+                        .map(portfolio => (
+                            <Portfolio
+                                portfolio={portfolio}
+                                quotes={quotes}
+                                details={details}
+                                addTicker={addTicker}
+                                fetchDetails={fetchDetails}
+                            />
+                        ))}
+                </div> 
+                <footer class="footer">Cheers!</footer>
         </div>
     );
 };
