@@ -5,8 +5,8 @@ import { useState, useEffect } from "preact/hooks";
 // todo: useReducer will work better as this grows, keep simple for now with old fashion useState and prop passing :/
 
 // todo: inject token at build time
-const API_TOKEN = 'pk_5b49c1fa228e490f8bf42a72aea3890d';
-const REFRESH_RATE = 10; // seconds
+const API_TOKEN = 'pk_b380285cec5a40579c7641b58c394be9';
+const REFRESH_RATE = 60; // seconds
 
 // initial set of portfolios
 const portfolios = {
