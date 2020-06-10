@@ -1,6 +1,6 @@
 {
   "name": "ticker",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Trackin' tickers.",
   "private": true,
   "scripts": {
