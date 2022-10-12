@@ -13,7 +13,7 @@
     "bread-compressor-cli": "1.1.0",
     "esbuild": "0.4.13",
     "http-server": "0.12.3",
-    "lighthouse": "^6.0.0",
+    "lighthouse": "^9.6.7",
     "onchange": "7.0.2",
     "preact": "10.4.4"
   }
